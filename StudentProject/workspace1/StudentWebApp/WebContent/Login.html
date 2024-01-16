@@ -5,31 +5,29 @@
 <title>Login Page</title>
 </head>
 <body>
+<form action="LoginServlet"  method = 'post'>
+<table>
+
+<tr>
+<td>Enter EmailId</td>
+<td><input type = "text"  name = "emailId"/></td>
+<tr/>
+
+<tr>
+<td>Enter Password</td>
+<td><input type = "password"  name = "password"/></td>
+<tr/>
 
 
-<h1>Login Form</h1>
+<tr>
+<td><button>Login</button> New User? <a href="Register.html">SignUp</a>
+<tr/>
 
 
-<form action="Login" method="post">
+</table>
 
-	<table>
-		<tr>
-			<td>Enter EmailId </td>
-			<td><input type="text" name="emailId" placeholder="Enter EmailId" /></td>
-		</tr>
-		<tr>
-			<td>Enter Password </td>
-			<td><input type="password" name="password" placeholder="Enter Password"/></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><button>Login</button></td>
-		</tr>
-		
-	</table>
+
 
 </form>
-
-
 </body>
 </html>
