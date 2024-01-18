@@ -1,0 +1,15 @@
+package com.ts;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.dao.StudentDao;
+
+@RestController
+public class StudentController {
+	
+    //Implementing Dependency Injection for ProductDao 
+    @Autowired
+    StudentDao studentDao;
+	
+}
