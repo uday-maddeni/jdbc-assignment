@@ -10,12 +10,39 @@ import com.model.Student;
 @Service
 public class StudentDao {
 	
-	//Implementing Dependency Injection for ProductRepository
+	//Implementing Dependency Injection for StudentRepository
 	@Autowired
 	StudentRepository studentRepository;
 
 	public List<Student> getAllStudents() {
 		return studentRepository.findAll();
+	}
+	
+	public Student getStudentById(int studentId) {
+		Student Student = new Student(0, "Student Not Found!!!", "");
+		return studentRepository.findById(studentId).orElse(Student);
+	}
+
+	public List<Student> getStudentByName(String studentName) {
+		return studentRepository.findByName(studentName);
+	}
+
+	public Student addStudent(Student student) {
+		return studentRepository.save(student);
+	}
+
+	public Student updateStudent(Student student) {
+		if(getStudentById(student.getStdId()) != null){
+			return studentRepository.save(student);
+		} else {
+			Student Student = new Student(0, "Student Not Found!!!", "");
+			return Student;
+		}
+	}
+
+	public Student deleteStudentById(int studentId) {
+		studentRepository.deleteById(studentId);
+		return new Student(0, "Student Deleted successfully!!!", "");
 	}
 	
 }
